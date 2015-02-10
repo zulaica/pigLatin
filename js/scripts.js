@@ -1,12 +1,15 @@
 var pigLatin = function(word) {
-  var vowels = ["a", "e", "i", "o", "u"];
-  var firstLetter = word[0];
+  var counter = 0;
 
-  vowels.forEach(function(vowel) {
-    if (vowel === firstLetter) {
-      word += "ay";
+  if ('aeiou'.indexOf(word[0]) != -1 ) {
+    word += "ay";
+  } else { 
+    while ('bcdfghjklmnprstvwxyz'.indexOf(word[counter]) != -1) {
+      ++counter;
     }
-  });
+    var x = counter - word.length;
+    var word = word.slice(counter) + word.slice(0,x) +"ay";
+  }
 
   return word;
 };
