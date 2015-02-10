@@ -4,7 +4,7 @@ var pigLatin = function(word) {
   } else {
     var pre = word.match(/\b([bcdfghjklmnprstvwxyz]|qu)+/)[0];
     var post = word.slice(pre.length);
-    var word = post + pre + "ay";
+    word = post + pre + "ay";
   }
   return word;
 };
