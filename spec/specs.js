@@ -14,4 +14,12 @@ describe('pigLatin', function() {
   it("moves consecutive consonants to the end of the word and adds 'ay' if the word starts with consecutive consonants", function() {
     expect(pigLatin("brrrrrrrrake")).to.equal("akebrrrrrrrray");
   });
+
+  it("moves 'qu' to the end of the word and adds 'ay' if the word starts with 'qu'", function() {
+    expect(pigLatin("quake")).to.equal("akequay");
+  });
+
+  it("takes into account words that don't start with 'qu'", function() {
+    expect(pigLatin("square")).to.equal("aresquay");
+  });
 });
